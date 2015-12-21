@@ -6,10 +6,7 @@ call vundle#begin()
 " better syntax highlighting
 Plugin 'StanAngeloff/php.vim'
 " ctags
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-easytags'
-let g:easytags_async = 1
-let g:easytags_events = ['BufWritePost']
+Plugin 'szw/vim-tags'
 " code validation
 Plugin 'joonty/vim-phpqa'
 let g:phpqa_codesniffer_autorun = 0
