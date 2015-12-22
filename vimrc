@@ -53,12 +53,12 @@ let b:phpfold_text_right_lines = 1 " - Display the line count on the right inste
 let b:phpfold_text_percent = 0 " - Display the percentage of lines the fold represents.
 " toggle
 map <F5> za
-" increase
-map <F6> zr
-" decrease
-map <F7> zm
-" open all
-map <F8> zR
+" expand all from current pos
+map <F6> zO
+" expand all
+map <F7> zR
+" clase all
+map <F8> zM
 " default foldlevel
 set foldlevelstart=1
 
