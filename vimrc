@@ -28,7 +28,6 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-
 " ctags
 Plugin 'szw/vim-tags'
 
@@ -59,6 +58,15 @@ map <F6> zR
 " close all
 map <F7> zM
 
+" File browsing
+Plugin 'scrooloose/nerdtree'
+" ctrl-n
+map <C-n> :NERDTreeToggle<CR>
+" open if no file
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" close if this is the last open window
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 call vundle#end()
 " Brief help
@@ -112,4 +120,8 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" Navigation
+" ctrl-left, ctrl-right switch between buffers
+noremap <silent> <C-left> :bprev<CR>
+noremap <silent> <C-right> :bnext<CR>
 
