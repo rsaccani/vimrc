@@ -53,10 +53,14 @@ let b:phpfold_text_right_lines = 1 " - Display the line count on the right inste
 let b:phpfold_text_percent = 0 " - Display the percentage of lines the fold represents.
 " toggle
 map <F5> za
+" increase
+map <F6> zr
+" decrease
+map <F7> zm
 " open all
-map <F6> zR
-" close all
-map <F7> zM
+map <F8> zR
+" default foldlevel
+set foldlevelstart=1
 
 " File browsing
 Plugin 'scrooloose/nerdtree'
