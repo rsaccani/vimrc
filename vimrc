@@ -1,18 +1,66 @@
 " Vundle
-set nocompatible
 filetype off
+filetype plugin indent on " Turns on filetype detection, filetype plugins, and filetype indenting all of which add nice extra features to whatever language you're using
+syntax enable             " Turns on filetype detection if not already on, and then applies filetype-specific highlighting.
+
+set nocompatible " to get all the Vim-only options
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
 " better syntax highlighting
 Plugin 'StanAngeloff/php.vim'
+
+" autocomplete for php
+Plugin 'shawncplus/phpcomplete.vim'
+let g:phpcomplete_complete_for_unknown_classes = 1
+let g:phpcomplete_search_tags_for_variables = 1
+let g:phpcomplete_parse_docblock_comments = 0
+inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
+            \ "\<lt>C-n>" :
+            \ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
+            \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
+            \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
+imap <C-@> <C-Space>
+autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+
 " ctags
 Plugin 'szw/vim-tags'
+
 " code validation
-Plugin 'joonty/vim-phpqa'
-let g:phpqa_codesniffer_autorun = 0
-let g:phpqa_messdetector_autorun = 0
+Plugin 'scrooloose/syntastic'
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_quiet_messages = { "type":    "style" }
+
+" folding
+Plugin 'swekaj/php-foldexpr.vim'
+let b:phpfold_use = 1 " - Fold groups of use statements in the global scope.
+let b:phpfold_group_iftry = 0 " - Fold if/elseif/else and try/catch/finally blocks as a group, rather than each part separate.
+let b:phpfold_group_args = 1 " - Group function arguments split across multiple lines into their own fold.
+let b:phpfold_group_case = 1 " - Fold case and default blocks inside switches.
+let b:phpfold_heredocs = 1 " - Fold HEREDOCs and NOWDOCs.
+let b:phpfold_docblocks = 0 " - Fold DocBlocks.
+let b:phpfold_doc_with_funcs = 0 " - Fold DocBlocks. Overrides `b:phpfold_docblocks`.
+let b:phpfold_text = 1 " - Enable the custom `foldtext` option.
+let b:phpfold_text_right_lines = 1 " - Display the line count on the right instead of the left.
+let b:phpfold_text_percent = 0 " - Display the percentage of lines the fold represents.
+" toggle
+map <F5> za
+" open all
+map <F6> zR
+" close all
+map <F7> zM
+
+
 call vundle#end()
-filetype plugin indent on
 " Brief help
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
@@ -28,12 +76,40 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 
-" syntax
-syntax on
-
-" menu
-set wildmenu
-
+" php manual
 autocmd FileType php set keywordprg=pman
+
+" color
+colorscheme desert
+" autocomplete box colors
+highlight Pmenu guifg=cyan guibg=darkgray
+highlight Pmenusel guifg=darkgray guibg=cyan
+highlight Pmenu ctermfg=cyan ctermbg=darkgray
+highlight Pmenusel ctermfg=darkgray ctermbg=cyan
+
+" presentation
+set nu
+set cursorline
+set showmode  " shows the current mode
+set backspace=indent,eol,start "backspaces behave like backspaces
+set hidden "good multi-file behaviors
+set wildmenu "better command line completion
+set wildmode=list:longest " completion acts like the shell
+set ignorecase  "case-insensitive searching
+set smartcase "unless there's a capital letter there
+set ruler "show cursor position in the corner
+set hlsearch "highlight search matches
+set incsearch "highlight search matches as I type
+set laststatus=2 " Always show a status line at the bottom
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
+set wrap  "linewraps
+set scrolloff=5 "always show 5 lines before/after the cursor
+set title "update term title
+set visualbell "turn off audio beeps
+
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 
