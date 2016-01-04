@@ -72,6 +72,10 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " close if this is the last open window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" Buffer explorer
+Bundle 'jeetsukumaran/vim-buffergator'
+map <C-b> :BuffergatorToggle<CR>
+
 call vundle#end()
 " Brief help
 " :PluginList       - lists configured plugins
