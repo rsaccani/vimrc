@@ -82,10 +82,17 @@ map <C-b> :BuffergatorToggle<CR>
 
 " Tag Bar
 Plugin 'majutsushi/tagbar'
-map <C-t> :TagbarToggle<CR>
+map <C-t> :TagbarOpenAutoClose<CR>
 
 " PHP refactoring
 Plugin 'adoy/vim-php-refactoring-toolbox'
+
+" PHP documentator
+Bundle 'tobyS/pdv'
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates"
+let g:vim_php_refactoring_phpdoc = "pdv#DocumentCurrentLine()"
+nnoremap <buffer> <C-p> :call pdv#DocumentCurrentLine()<CR>
+Plugin 'tobyS/vmustache'
 
 call vundle#end()
 " Brief help
