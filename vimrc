@@ -61,6 +61,8 @@ map <F7> zR
 map <F8> zM
 " default foldlevel
 set foldlevelstart=1
+" override debian default
+set foldenable
 
 " File browsing
 Plugin 'scrooloose/nerdtree'
