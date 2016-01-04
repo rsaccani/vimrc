@@ -80,6 +80,10 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 Bundle 'jeetsukumaran/vim-buffergator'
 map <C-b> :BuffergatorToggle<CR>
 
+" Tag Bar
+Plugin 'majutsushi/tagbar'
+map <C-t> :TagbarToggle<CR>
+
 call vundle#end()
 " Brief help
 " :PluginList       - lists configured plugins
