@@ -4,8 +4,10 @@ filetype plugin indent on " Turns on filetype detection, filetype plugins, and f
 syntax enable             " Turns on filetype detection if not already on, and then applies filetype-specific highlighting.
 
 set nocompatible " to get all the Vim-only options
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/vundle
 call vundle#begin()
+
+Bundle 'gmarik/vundle'
 
 " better syntax highlighting
 Plugin 'StanAngeloff/php.vim'
