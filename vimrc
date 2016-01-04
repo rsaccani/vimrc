@@ -84,6 +84,9 @@ map <C-b> :BuffergatorToggle<CR>
 Plugin 'majutsushi/tagbar'
 map <C-t> :TagbarToggle<CR>
 
+" PHP refactoring
+Plugin 'adoy/vim-php-refactoring-toolbox'
+
 call vundle#end()
 " Brief help
 " :PluginList       - lists configured plugins
