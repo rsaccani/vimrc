@@ -150,4 +150,8 @@ set statusline+=%*
 " ctrl-left, ctrl-right switch between buffers
 noremap <silent> <C-left> :bprev<CR>
 noremap <silent> <C-right> :bnext<CR>
+" ctrl-j jumps to tag
+noremap <silent> <C-j> <C-]>
+" fix for ctrl-left and ctrl-right in screen
+set term=xterm
 
