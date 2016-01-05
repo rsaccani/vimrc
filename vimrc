@@ -82,7 +82,7 @@ map <C-b> :BuffergatorToggle<CR>
 
 " Tag Bar
 Plugin 'majutsushi/tagbar'
-map <C-t> :TagbarOpenAutoClose<CR>
+map <C-t> :TagbarToggle<CR>
 
 " PHP refactoring
 Plugin 'adoy/vim-php-refactoring-toolbox'
