@@ -91,7 +91,7 @@ let g:vim_php_refactoring_phpdoc = "pdv#DocumentCurrentLine"
 " PHP documentator
 Bundle 'tobyS/pdv'
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates"
-nnoremap <buffer> <C-p> :call pdv#DocumentCurrentLine()<CR>
+map <buffer> <C-p> :call pdv#DocumentCurrentLine()<CR>
 Plugin 'tobyS/vmustache'
 
 " twig highlight
