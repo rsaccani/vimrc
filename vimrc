@@ -94,6 +94,9 @@ let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates"
 nnoremap <buffer> <C-p> :call pdv#DocumentCurrentLine()<CR>
 Plugin 'tobyS/vmustache'
 
+" twig highlight
+Plugin 'evidens/vim-twig'
+
 call vundle#end()
 " Brief help
 " :PluginList       - lists configured plugins
