@@ -97,6 +97,11 @@ Plugin 'tobyS/vmustache'
 " twig highlight
 Plugin 'evidens/vim-twig'
 
+" Fuzzy find
+Plugin 'eparreno/vim-l9'
+Plugin 'vim-scripts/FuzzyFinder'
+map <C-m> :FufCoverageFile<CR>
+
 call vundle#end()
 " Brief help
 " :PluginList       - lists configured plugins
