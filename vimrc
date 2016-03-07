@@ -102,6 +102,12 @@ Plugin 'eparreno/vim-l9'
 Plugin 'vim-scripts/FuzzyFinder'
 map <C-m> :FufCoverageFile<CR>
 
+" vim-sync
+Plugin 'eshion/vim-sync'
+autocmd BufWritePost * :call SyncUploadFile()
+nnoremap <C-u> <ESC>:call SyncUploadFile()<CR>
+
+
 call vundle#end()
 " Brief help
 " :PluginList       - lists configured plugins
