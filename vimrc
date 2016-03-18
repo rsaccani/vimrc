@@ -42,29 +42,29 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_quiet_messages = { "type":    "style" }
 
 " folding
-Plugin 'swekaj/php-foldexpr.vim'
-let b:phpfold_use = 1 " - Fold groups of use statements in the global scope.
-let b:phpfold_group_iftry = 0 " - Fold if/elseif/else and try/catch/finally blocks as a group, rather than each part separate.
-let b:phpfold_group_args = 1 " - Group function arguments split across multiple lines into their own fold.
-let b:phpfold_group_case = 1 " - Fold case and default blocks inside switches.
-let b:phpfold_heredocs = 1 " - Fold HEREDOCs and NOWDOCs.
-let b:phpfold_docblocks = 0 " - Fold DocBlocks.
-let b:phpfold_doc_with_funcs = 0 " - Fold DocBlocks. Overrides `b:phpfold_docblocks`.
-let b:phpfold_text = 1 " - Enable the custom `foldtext` option.
-let b:phpfold_text_right_lines = 1 " - Display the line count on the right instead of the left.
-let b:phpfold_text_percent = 0 " - Display the percentage of lines the fold represents.
+"Plugin 'swekaj/php-foldexpr.vim'
+"let b:phpfold_use = 1 " - Fold groups of use statements in the global scope.
+"let b:phpfold_group_iftry = 0 " - Fold if/elseif/else and try/catch/finally blocks as a group, rather than each part separate.
+"let b:phpfold_group_args = 1 " - Group function arguments split across multiple lines into their own fold.
+"let b:phpfold_group_case = 1 " - Fold case and default blocks inside switches.
+"let b:phpfold_heredocs = 1 " - Fold HEREDOCs and NOWDOCs.
+"let b:phpfold_docblocks = 0 " - Fold DocBlocks.
+"let b:phpfold_doc_with_funcs = 0 " - Fold DocBlocks. Overrides `b:phpfold_docblocks`.
+"let b:phpfold_text = 1 " - Enable the custom `foldtext` option.
+"let b:phpfold_text_right_lines = 1 " - Display the line count on the right instead of the left.
+"let b:phpfold_text_percent = 0 " - Display the percentage of lines the fold represents.
 " toggle
-map <F5> za
+"map <F5> za
 " expand all from current pos
-map <F6> zO
+"map <F6> zO
 " expand all
-map <F7> zR
+"map <F7> zR
 " clase all
-map <F8> zM
+"map <F8> zM
 " default foldlevel
-set foldlevelstart=1
+"set foldlevelstart=1
 " override debian default
-set foldenable
+"set foldenable
 
 " File browsing
 Plugin 'scrooloose/nerdtree'
@@ -106,6 +106,13 @@ map <C-m> :FufCoverageFile<CR>
 Plugin 'eshion/vim-sync'
 autocmd BufWritePost * :call SyncUploadFile()
 nnoremap <C-u> <ESC>:call SyncUploadFile()<CR>
+
+" fugitive
+Plugin 'tpope/vim-fugitive'
+
+" fugitive-gitlab
+Plugin 'shumphrey/fugitive-gitlab.vim'
+let g:fugitive_gitlab_domains = ['http://code.libra.srl']
 
 
 call vundle#end()
