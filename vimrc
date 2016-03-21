@@ -115,6 +115,12 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'shumphrey/fugitive-gitlab.vim'
 let g:fugitive_gitlab_domains = ['http://code.libra.srl']
 
+" Vdebug
+Bundle 'joonty/vdebug.git'
+if !exists("g:vdebug_options")
+        let g:vdebug_options = {}
+endif
+let g:vdebug_options['path_maps'] = {"/var/www/html": "/home/rsa/git/Esva"}
 
 call vundle#end()
 " Brief help
