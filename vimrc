@@ -16,7 +16,7 @@ Plugin 'StanAngeloff/php.vim'
 Plugin 'shawncplus/phpcomplete.vim'
 let g:phpcomplete_complete_for_unknown_classes = 1
 let g:phpcomplete_search_tags_for_variables = 1
-let g:phpcomplete_parse_docblock_comments = 0
+let g:phpcomplete_parse_docblock_comments = 1
 inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
             \ "\<lt>C-n>" :
             \ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
@@ -71,11 +71,12 @@ Plugin 'scrooloose/nerdtree'
 " ctrl-n
 map <C-n> :NERDTreeToggle<CR>
 " open if no file
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " close if this is the last open window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:NERDTreeWinSize = 40
+let NERDTreeQuitOnOpen=1
 
 " Buffer explorer
 Bundle 'jeetsukumaran/vim-buffergator'
@@ -91,9 +92,9 @@ let g:vim_php_refactoring_phpdoc = "pdv#DocumentCurrentLine"
 
 " PHP documentator
 Bundle 'tobyS/pdv'
-let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates"
-map <buffer> <C-l> :call pdv#DocumentCurrentLine()<CR>
 Plugin 'tobyS/vmustache'
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates"
+map <buffer> <C-k>  :call pdv#DocumentCurrentLine()<CR>
 
 " twig highlight
 Plugin 'evidens/vim-twig'
@@ -121,6 +122,9 @@ if !exists("g:vdebug_options")
         let g:vdebug_options = {}
 endif
 let g:vdebug_options['path_maps'] = {"/var/www/html": "/home/rsa/git/Esva"}
+
+" auto pairs
+Bundle 'jiangmiao/auto-pairs'
 
 call vundle#end()
 " Brief help
