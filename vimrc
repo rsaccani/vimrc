@@ -17,12 +17,12 @@ Plugin 'shawncplus/phpcomplete.vim'
 let g:phpcomplete_complete_for_unknown_classes = 1
 let g:phpcomplete_search_tags_for_variables = 1
 let g:phpcomplete_parse_docblock_comments = 1
-inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
-            \ "\<lt>C-n>" :
-            \ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
-            \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
-            \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
-imap <C-@> <C-Space>
+"inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
+"            \ "\<lt>C-n>" :
+"            \ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
+"            \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
+"            \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
+"imap <C-@> <C-Space>
 autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
@@ -116,6 +116,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'shumphrey/fugitive-gitlab.vim'
 let g:fugitive_gitlab_domains = ['http://code.libra.srl']
 
+" supertab
+Plugin 'ervandew/supertab'
+
 " Vdebug
 Bundle 'joonty/vdebug.git'
 if !exists("g:vdebug_options")
@@ -125,6 +128,12 @@ let g:vdebug_options['path_maps'] = {"/var/www/html": "/home/rsa/git/Esva"}
 
 " auto pairs
 Bundle 'jiangmiao/auto-pairs'
+
+" better statusline
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+let g:airline_theme='bubblegum'
+let g:airline_powerline_fonts = 1
 
 call vundle#end()
 " Brief help
@@ -166,17 +175,17 @@ set smartcase "unless there's a capital letter there
 set ruler "show cursor position in the corner
 set hlsearch "highlight search matches
 set incsearch "highlight search matches as I type
-set laststatus=2 " Always show a status line at the bottom
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 set wrap  "linewraps
 set scrolloff=5 "always show 5 lines before/after the cursor
 set title "update term title
 set visualbell "turn off audio beeps
 
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+set laststatus=2 " Always show a status line at the bottom
+"set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
 " Navigation
 " ctrl-left, ctrl-right switch between buffers
@@ -187,3 +196,5 @@ noremap <silent> <C-j> <C-]>
 " fix for ctrl-left and ctrl-right in screen
 set term=xterm
 
+" to make airline themes work fine
+set t_Co=256
