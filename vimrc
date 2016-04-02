@@ -124,6 +124,8 @@ let g:vdebug_options['path_maps'] = {"/var/www/html": "/home/rsa/git/Esva"}
 Bundle 'jiangmiao/auto-pairs'
 
 " better statusline
+" You should also install the font:
+" https://powerline.readthedocs.org/en/master/installation/linux.html#fontconfig
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 let g:airline_theme='bubblegum'
