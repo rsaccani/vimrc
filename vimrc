@@ -14,8 +14,8 @@ Plugin 'StanAngeloff/php.vim'
 
 " autocomplete for php
 Plugin 'shawncplus/phpcomplete.vim'
-let g:phpcomplete_complete_for_unknown_classes = 1
-let g:phpcomplete_search_tags_for_variables = 1
+let g:phpcomplete_complete_for_unknown_classes = 0
+let g:phpcomplete_search_tags_for_variables = 0
 let g:phpcomplete_parse_docblock_comments = 1
 "inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
 "            \ "\<lt>C-n>" :
@@ -66,6 +66,10 @@ let g:syntastic_quiet_messages = { "type":    "style" }
 " override debian default
 "set foldenable
 
+" getters and setters
+Plugin 'docteurklein/php-getter-setter.vim'
+map <buffer> <C-p> <Plug>PhpgetsetInsertBothGetterSetter
+
 " File browsing
 Plugin 'scrooloose/nerdtree'
 " ctrl-n
@@ -79,6 +83,7 @@ let g:NERDTreeWinSize = 40
 let NERDTreeQuitOnOpen=1
 
 " Buffer explorer
+let g:buffergator_suppress_keymaps=1 
 Bundle 'jeetsukumaran/vim-buffergator'
 map <C-b> :BuffergatorToggle<CR>
 
