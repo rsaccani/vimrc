@@ -142,6 +142,9 @@ Plugin 'tobyS/vmustache'
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates"
 map <buffer> <C-k>  :call pdv#DocumentCurrentLine()<CR>
 
+" Comments
+Plugin 'tomtom/tcomment_vim'
+
 call vundle#end()
 " Brief help
 " :PluginList       - lists configured plugins
@@ -200,6 +203,13 @@ noremap <silent> <C-left> :bprev<CR>
 noremap <silent> <C-right> :bnext<CR>
 " ctrl-j jumps to tag
 noremap <silent> <C-j> <C-]>
+" + and - horizontally resize tabs
+if bufwinnr(1)
+    map <S-Right> <C-W>>
+    map <S-Left> <C-W><
+    map <S-Down> <C-W>+
+    map <S-Up> <C-W>-
+endif  
 " fix for ctrl-left and ctrl-right in screen
 set term=xterm
 
