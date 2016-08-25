@@ -165,12 +165,12 @@ set shiftwidth=4
 autocmd FileType php set keywordprg=pman
 
 " color
-colorscheme desert
+colorscheme slate
 " autocomplete box colors
-highlight Pmenu guifg=cyan guibg=darkgray
-highlight Pmenusel guifg=darkgray guibg=cyan
-highlight Pmenu ctermfg=cyan ctermbg=darkgray
-highlight Pmenusel ctermfg=darkgray ctermbg=cyan
+"highlight Pmenu guifg=cyan guibg=darkgray
+"highlight Pmenusel guifg=darkgray guibg=cyan
+"highlight Pmenu ctermfg=cyan ctermbg=darkgray
+"highlight Pmenusel ctermfg=darkgray ctermbg=cyan
 
 " presentation
 set nu
@@ -212,7 +212,14 @@ if bufwinnr(1)
 endif  
 " fix for ctrl-left and ctrl-right in screen
 set term=xterm
-
+" Alt-arrows change window
+map <Leader><Up> <C-W><Up>
+map <Leader><Down> <C-W><Down>
+map <Leader><Left> <C-W><Left>
+map <Leader><Right> <C-W><Right>
+" allow thte mouse to select the window
+set mouse+=a
+set ttymouse=xterm2
 " to make airline themes work fine
 set t_Co=256
 
