@@ -86,6 +86,7 @@ let NERDTreeQuitOnOpen=1
 let g:buffergator_suppress_keymaps=1 
 Bundle 'jeetsukumaran/vim-buffergator'
 map <C-b> :BuffergatorToggle<CR>
+let g:buffergator_vsplit_size=80
 
 " Tag Bar
 Plugin 'majutsushi/tagbar'
@@ -140,10 +141,19 @@ let g:airline_powerline_fonts = 1
 Bundle 'tobyS/pdv'
 Plugin 'tobyS/vmustache'
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates"
-map <buffer> <C-k>  :call pdv#DocumentCurrentLine()<CR>
+map <buffer> <C-P>  :call pdv#DocumentCurrentLine()<CR>
 
 " Comments
 Plugin 'tomtom/tcomment_vim'
+
+" Save old versions of file on save
+Plugin 'vim-scripts/savevers.vim'
+set backup
+set patchmode=.clean
+let savevers_dirs='.ignore/backup,.backup,~/.vim/backup'
+let savevers_types = "*.c,*.h,*.vim,*.php,*.css,*.js.*.cf,*.pm,*.sh,*.conf"
+let savevers_max = 99
+
 
 call vundle#end()
 " Brief help
