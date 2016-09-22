@@ -79,7 +79,7 @@ map <C-n> :NERDTreeToggle<CR>
 "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " close if this is the last open window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-let g:NERDTreeWinSize = 40
+let g:NERDTreeWinSize = 50
 let NERDTreeQuitOnOpen=1
 
 " Buffer explorer
@@ -95,6 +95,19 @@ map <C-t> :TagbarToggle<CR>
 " PHP refactoring
 Plugin 'adoy/vim-php-refactoring-toolbox'
 let g:vim_php_refactoring_phpdoc = "pdv#DocumentCurrentLine"
+" Default mappings
+" nnoremap <unique> <Leader>rlv :call PhpRenameLocalVariable()<CR>
+" nnoremap <unique> <Leader>rcv :call PhpRenameClassVariable()<CR>
+" nnoremap <unique> <Leader>rm :call PhpRenameMethod()<CR>
+" nnoremap <unique> <Leader>eu :call PhpExtractUse()<CR>
+" vnoremap <unique> <Leader>ec :call PhpExtractConst()<CR>
+" nnoremap <unique> <Leader>ep :call PhpExtractClassProperty()<CR>
+" vnoremap <unique> <Leader>em :call PhpExtractMethod()<CR>
+" nnoremap <unique> <Leader>np :call PhpCreateProperty()<CR>
+" nnoremap <unique> <Leader>du :call PhpDetectUnusedUseStatements()<CR>
+" vnoremap <unique> <Leader>== :call PhpAlignAssigns()<CR>
+" nnoremap <unique> <Leader>sg :call PhpCreateSettersAndGetters()<CR>
+" nnoremap <unique> <Leader>da :call PhpDocAll()<CR>
 
 " twig highlight
 Plugin 'evidens/vim-twig'
@@ -141,18 +154,18 @@ let g:airline_powerline_fonts = 1
 Bundle 'tobyS/pdv'
 Plugin 'tobyS/vmustache'
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates"
-map <buffer> <C-P>  :call pdv#DocumentCurrentLine()<CR>
+map <C-P>  :call pdv#DocumentCurrentLine()<CR>
 
 " Comments
 Plugin 'tomtom/tcomment_vim'
 
 " Save old versions of file on save
-Plugin 'vim-scripts/savevers.vim'
-set backup
-set patchmode=.clean
-let savevers_dirs='.ignore/backup,.backup,~/.vim/backup'
-let savevers_types = "*.c,*.h,*.vim,*.php,*.css,*.js.*.cf,*.pm,*.sh,*.conf"
-let savevers_max = 99
+"Plugin 'vim-scripts/savevers.vim'
+"set backup
+"set patchmode=.clean
+"let savevers_dirs='.ignore/backup,.backup,/home/rsa/.vim/backup'
+"let savevers_types = "*.c,*.h,*.vim,*.php,*.css,*.js.*.cf,*.pm,*.sh,*.conf"
+"let savevers_max = 99
 
 
 call vundle#end()
