@@ -149,6 +149,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 let g:airline_theme='bubblegum'
 let g:airline_powerline_fonts = 1
+let g:airline_section_z = "%b\ 0x%B %3p%% %#__accent_bold#%{g:airline_symbols.linenr}%#__accent_bold#%4l%#__restore__#%#__restore__#%#__accent_bold#%#__accent_bold#/%L%{g:airline_symbols.maxlinenr}%#__restore__#%#__restore__# :%3v "
 
 " PHP documentator
 Bundle 'tobyS/pdv'
