@@ -116,10 +116,11 @@ Plugin 'evidens/vim-twig'
 Plugin 'eparreno/vim-l9'
 Plugin 'vim-scripts/FuzzyFinder'
 map <C-m> :FufCoverageFile<CR>
+unmap <CR>
 
 " vim-sync
 Plugin 'eshion/vim-sync'
-autocmd BufWritePost * :call SyncUploadFile()
+"autocmd BufWritePost * :call SyncUploadFile()
 nnoremap <C-u> <ESC>:call SyncUploadFile()<CR>
 
 " fugitive
