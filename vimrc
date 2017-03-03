@@ -1,4 +1,4 @@
-" Vundle
+
 filetype off
 filetype plugin indent on " Turns on filetype detection, filetype plugins, and filetype indenting all of which add nice extra features to whatever language you're using
 syntax enable             " Turns on filetype detection if not already on, and then applies filetype-specific highlighting.
@@ -247,6 +247,8 @@ set mouse+=a
 set ttymouse=xterm2
 " to make airline themes work fine
 set t_Co=256
+" ctrl-l clean urls
+noremap <silent> <C-l> :.,$s/\[\.\]/./e<CR>:.,$s/\ .*//e<CR>:.,$s/\(https\?:\/\/\)\?\(www\.\)\?\([^/]*\).*/\3/e<CR>:noh<CR>
 
 
 " cscope
