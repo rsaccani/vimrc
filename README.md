@@ -11,4 +11,8 @@ cd bundle/A
 
 rsa@rsa-pc:~/vim/bundle (master) $ git clone https://github.com/VundleVim/Vundle.vim.git vundle
 
+launch vim
+
+type :VundleInstall
+
 
