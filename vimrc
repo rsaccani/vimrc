@@ -1,7 +1,7 @@
 
 filetype off
-filetype plugin indent on " Turns on filetype detection, filetype plugins, and filetype indenting all of which add nice extra features to whatever language you're using
-syntax enable             " Turns on filetype detection if not already on, and then applies filetype-specific highlighting.
+filetype plugin indent on " Turns on filetype detection, filetype plugins, and filetype indenting
+syntax enable             " Turns on filetype detection and applies filetype-specific highlighting.
 
 set nocompatible " to get all the Vim-only options
 set rtp+=~/.vim/bundle/vundle
@@ -9,7 +9,7 @@ call vundle#begin()
 
 Bundle 'gmarik/vundle'
 
-" better syntax highlighting
+" better syntax highlighting for php
 Plugin 'StanAngeloff/php.vim'
 
 " autocomplete for php
@@ -249,6 +249,8 @@ set ttymouse=xterm2
 set t_Co=256
 " ctrl-l clean urls
 noremap <silent> <C-l> :.,$s/\[\.\]/./e<CR>:.,$s/\ .*//e<CR>:.,$s/\(https\?:\/\/\)\?\(www\.\)\?\([^/]*\).*/\3/e<CR>:noh<CR>
+" ctrl-k remove duplicates without sorting, keeps first one
+noremap <silent> <C-k> :g/^/m0<CR>:g/^\(.*\)\ze\n\%(.*\n\)*\1$/d<CR>:g/^/m0<CR>:noh<CR>
 
 
 " cscope
