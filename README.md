@@ -7,9 +7,9 @@ This is my personal vim configuration
 
 Clone this repository, then:
 
-cd bundle/A
+cd bundle
 
-rsa@rsa-pc:~/vim/bundle (master) $ git clone https://github.com/VundleVim/Vundle.vim.git vundle
+$ git clone https://github.com/VundleVim/Vundle.vim.git vundle
 
 launch vim
 
