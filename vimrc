@@ -248,7 +248,7 @@ set ttymouse=xterm2
 " to make airline themes work fine
 set t_Co=256
 " ctrl-l clean urls
-noremap <silent> <C-l> :.,$s/^[^#].*/\L&/e<CR>:noh<CR>:.,$s/\[\.\]/./e<CR>:.,$s/\ .*//e<CR>:.,$s/\(https\?:\/\/\)\?\(www\.\)\?\([^/]*\).*/\3/ie<CR>:noh<CR>
+noremap <silent> <C-l> :.,$s/\[\.\]/./e<CR>:.,$s/\ .*//e<CR>:.,$s/\(https\?:\/\/\)\?\(www\.\)\?\([^/]*\).*/\3/ie<CR>:noh<CR>
 " ctrl-k remove duplicates without sorting, keeps first one
 noremap <silent> <C-k> :g/^/m0<CR>:g/^\(.*\)\ze\n\%(.*\n\)*\1$/d<CR>:g/^/m0<CR>:noh<CR>
 
