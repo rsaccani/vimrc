@@ -15,4 +15,6 @@ launch vim
 
 type :VundleInstall
 
+Install [fonts](https://powerline.readthedocs.io/en/master/installation/linux.html#fonts-installation)
+
 
