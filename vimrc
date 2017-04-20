@@ -9,6 +9,9 @@ call vundle#begin()
 
 Bundle 'gmarik/vundle'
 
+" show added-changed-removed lines
+Bundle 'airblade/vim-gitgutter'
+
 " better syntax highlighting for php
 Plugin 'StanAngeloff/php.vim'
 
