@@ -337,3 +337,6 @@ if has("cscope")
     "
     "set ttimeoutlen=100
 endif
+
+" Change search highlight colors
+hi  Search ctermfg=black ctermbg=brown
