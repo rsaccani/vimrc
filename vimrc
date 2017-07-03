@@ -159,7 +159,7 @@ let g:airline_section_z = "0x%B %3p%% %#__accent_bold#%{g:airline_symbols.linenr
 Bundle 'tobyS/pdv'
 Plugin 'tobyS/vmustache'
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates"
-map <C-P>  :call pdv#DocumentCurrentLine()<CR>
+map <C-d>  :call pdv#DocumentCurrentLine()<CR>
 
 " Comments
 Plugin 'tomtom/tcomment_vim'
