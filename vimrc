@@ -254,7 +254,7 @@ set t_Co=256
 noremap <silent> <C-l> :.,$s/\[\.\]/./e<CR>:.,$s/\ .*//e<CR>:.,$s/\(https\?:\/\/\)\?\(www\.\)\?\([^/]*\).*/\3/ie<CR>:noh<CR>
 " ctrl-k remove duplicates without sorting, keeps first one
 "noremap <silent> <C-k> :GitGutterDisable<CR>:g/^/m0<CR>:g/^\(.*\)\n\1$/d<CR>:g/^/m0<CR>:noh<CR>:GitGutterEnable<CR>
-noremap <silent> <C-k> :%!awk '\!a[$0]++'<CR>
+noremap <silent> <C-k> :%!awk '\!a[$0]++'<CR>:$<CR>
 
 
 " cscope
