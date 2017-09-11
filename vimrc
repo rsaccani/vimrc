@@ -118,7 +118,7 @@ Plugin 'evidens/vim-twig'
 " Fuzzy find
 Plugin 'eparreno/vim-l9'
 Plugin 'vim-scripts/FuzzyFinder'
-map <C-m> :FufCoverageFile<CR>
+map <C-f> :FufCoverageFile<CR>
 "unmap <CR>
 
 " vim-sync

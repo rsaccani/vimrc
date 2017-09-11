@@ -31,10 +31,10 @@ Install [fonts](https://powerline.readthedocs.io/en/master/installation/linux.ht
 * tagbar (ctrl-t) shows a tagbar with functions and symbols, allows to navigate
 * PHP refactoring support: shortcuts to rename variables, methods, classes and other refactoring facilities
 * syntax highlighting for TWIG
-* vim-sync: with ctrl-u you can upload a file to testing/productio, you can write your own script to do it
+* vim-sync: with ctrl-u you can upload a file to testing/production, you can write your own script to do it
 * full GIT support via vim-fugitive, you can do all git operations from within vim
 * specific vim-fugitive support for gitlab (you can configure your domain in vimrc)
-* fuzzy-finder to make fuzzy searches for files, buffers, bookmarks, tags .... just press CR
+* fuzzy-finder (ctrl-f) to make fuzzy searches for files, buffers, bookmarks, tags 
 * vdebug support: you can remotely debug from within vim
 * auto-pairs; autocompletes pharenteses, quotes
 * full-featured status line
