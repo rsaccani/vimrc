@@ -254,8 +254,8 @@ set t_Co=256
 noremap <silent> <C-l> :.,$s/\[\.\]/./e<CR>:.,$s/\ .*//e<CR>:.,$s/\(h[tx]\{2\}ps\?:\/\/\)\?\(www\.\)\?\([^/]*\).*/\3/ie<CR>:noh<CR>
 " ctrl-k remove duplicates without sorting, keeps first one
 "noremap <silent> <C-k> :GitGutterDisable<CR>:g/^/m0<CR>:g/^\(.*\)\n\1$/d<CR>:g/^/m0<CR>:noh<CR>:GitGutterEnable<CR>
-noremap <silent> <C-k> :%!awk '\!a[$0]++'<CR>:$<CR>
-
+noremap <silent> <C-k> :GitGutterDisable<CR>:%!awk '\!a[$0]++'<CR>:$<CR>:GitGutterEnable<CR>
+noremap <silent> <C-o> :echo "Please wait, removing subdomains..."<CR>:GitGutterDisable<CR>:%!f=$(mktemp); cat - > $f;grep -vxf <(comm -23 <(sort $f) <(sort $f \| uniq \| rev \| sort \| awk 'NR\!=1&&substr($0,0,length(p))==p{next}{p=$0".";print}' \| rev\|sort)) $f; rm -f $f<CR>:$<CR>:GitGutterEnable<CR>:echo ""<CR>
 
 " cscope
 if has("cscope")
