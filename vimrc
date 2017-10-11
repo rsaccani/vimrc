@@ -251,7 +251,7 @@ set ttymouse=xterm2
 " to make airline themes work fine
 set t_Co=256
 " ctrl-l clean urls
-noremap <silent> <C-l> :.,$s/\[\.\]/./e<CR>:.,$s/\ .*//e<CR>:.,$s/\(h[tx]\{2\}ps\?:\/\/\)\?\(www\.\)\?\([^/]*\).*/\3/ie<CR>:noh<CR>
+noremap <silent> <C-l> :.,$s/\[\.\]/./eg<CR>:.,$s/\ .*//e<CR>:.,$s/\(h[tx]\{2\}ps\?:\/\/\)\?\(www\.\)\?\([^/]*\).*/\3/ie<CR>:noh<CR>
 " ctrl-k remove duplicates without sorting, keeps first one
 "noremap <silent> <C-k> :GitGutterDisable<CR>:g/^/m0<CR>:g/^\(.*\)\n\1$/d<CR>:g/^/m0<CR>:noh<CR>:GitGutterEnable<CR>
 noremap <silent> <C-k> :GitGutterDisable<CR>:%!awk '\!a[$0]++'<CR>:$<CR>:GitGutterEnable<CR>
