@@ -48,5 +48,5 @@ Install [fonts](https://powerline.readthedocs.io/en/master/installation/linux.ht
 * shift-arrows resize tabs, both horizontally and vertically
 * ctrl-l cleans urls: removes everything except the domain, in the whole file
 * ctrl-k removes duplicate lines in the file, without sorting, keeps the first occurance, pretty fast
-* ctrl-o assuming that the current file contains a list of domains, removes all the subdomains of domains that are present in the file, without sorting, keeps the first occurance, may be slow if the list contains thousands of entries
+* ctrl-i assuming that the current file contains a list of domains, removes all the subdomains of domains that are present in the file, without sorting, keeps the first occurance, may be slow if the list contains thousands of entries
 * ctrl-\ followed by: s to find symbol, g find global, c find calls, t find text, e egrep, f find file, i find includes, d find called
