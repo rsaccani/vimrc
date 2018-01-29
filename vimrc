@@ -258,6 +258,8 @@ noremap <silent> <C-k> :GitGutterDisable<CR>:%!awk '\!a[$0]++'<CR>:$<CR>:GitGutt
 noremap <silent> <C-i> :echo "Please wait, removing subdomains..."<CR>:GitGutterDisable<CR>:%!f=$(mktemp); cat - > $f;grep -vxf <(comm -23 <(sort $f \| uniq) <(sort $f \| uniq \| rev \| sort \| awk 'NR\!=1&&substr($0,0,length(p))==p{next}{p=$0".";print}' \| rev\|sort)) $f; rm -f $f<CR>:$<CR>:GitGutterEnable<CR>:echo ""<CR>
 " ctrl-g updates ctags and cscope
 noremap <silent> <C-g> :echo "Updating ctags and cscope..."<CR>:!rm tags cscope.out; ctags -R; find . -name '*.php' \| xargs  -I '{}' echo \"{}\" > ./cscope.files; find . -name '*.js' \| xargs  -I '{}' echo \"{}\" >> ./cscope.files; cscope -b; rm ./cscope.files<CR>:echo ""<CR>:cs reset<CR>
+" ctrl-a add to permanent blacklist
+noremap <silent> <C-a> :if filereadable("../domain.permanent.malware/manual")<CR>.w>>../domain.permanent.malware/manual<CR>.d<CR>endif<CR>
 
 
 " cscope
