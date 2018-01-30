@@ -259,7 +259,7 @@ noremap <silent> <C-i> :echo "Please wait, removing subdomains..."<CR>:GitGutter
 " ctrl-g updates ctags and cscope
 noremap <silent> <C-g> :echo "Updating ctags and cscope..."<CR>:!rm tags cscope.out; ctags -R; find . -name '*.php' \| xargs  -I '{}' echo \"{}\" > ./cscope.files; find . -name '*.js' \| xargs  -I '{}' echo \"{}\" >> ./cscope.files; cscope -b; rm ./cscope.files<CR>:echo ""<CR>:cs reset<CR>
 " ctrl-a add to permanent blacklist
-noremap <silent> <C-a> :if filereadable("../domain.permanent.malware/manual")<CR>.w>>../domain.permanent.malware/manual<CR>.d<CR>endif<CR>
+noremap <silent> <C-a> :if filereadable("../domain.permanent.malware/manual")<CR>.w>>../domain.permanent.malware/manual<CR>.d<CR>endif<CR>:if filereadable("./domain.permanent.malware/manual")<CR>.w>>./domain.permanent.malware/manual<CR>.d<CR>endif<CR>
 
 
 " cscope
