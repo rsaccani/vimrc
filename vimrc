@@ -213,7 +213,7 @@ set smartcase "unless there's a capital letter there
 set ruler "show cursor position in the corner
 set hlsearch "highlight search matches
 set incsearch "highlight search matches as I type
-set wrap  "linewraps
+set nowrap  "linewraps
 set scrolloff=5 "always show 5 lines before/after the cursor
 set title "update term title
 set visualbell "turn off audio beeps
