@@ -15,6 +15,10 @@ Bundle 'airblade/vim-gitgutter'
 " better syntax highlighting for php
 Plugin 'StanAngeloff/php.vim'
 
+" syntax highlihting for tsx
+Plugin 'leafgarland/typescript-vim'
+au BufRead,BufNewFile *.tsx setfiletype typescript
+
 " autocomplete for php
 Plugin 'shawncplus/phpcomplete.vim'
 let g:phpcomplete_complete_for_unknown_classes = 0
