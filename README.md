@@ -23,7 +23,7 @@ Manually install [fonts](https://powerline.readthedocs.io/en/master/installation
 
 ## Features
 
-* autocomplete support for PHP (use TAB, thanks to vim-supertab)
+* autocomplete support for PHP
 * syntax highligthing for PHP
 * git; show difference in the "gutter" (sign column). Shows lines that have been added-removed-modified
 * ctags support

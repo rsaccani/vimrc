@@ -19,23 +19,26 @@ Plugin 'StanAngeloff/php.vim'
 Plugin 'leafgarland/typescript-vim'
 au BufRead,BufNewFile *.tsx setfiletype typescript
 
+" vscode
+Plugin 'neoclide/coc.nvim'
+
 " autocomplete for php
-Plugin 'shawncplus/phpcomplete.vim'
-let g:phpcomplete_complete_for_unknown_classes = 0
-let g:phpcomplete_search_tags_for_variables = 0
-let g:phpcomplete_parse_docblock_comments = 1
+""Plugin 'shawncplus/phpcomplete.vim'
+""let g:phpcomplete_complete_for_unknown_classes = 0
+""let g:phpcomplete_search_tags_for_variables = 0
+""let g:phpcomplete_parse_docblock_comments = 1
 "inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
 "            \ "\<lt>C-n>" :
 "            \ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
 "            \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
 "            \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
-imap <C-@> <C-Space>
-autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+""imap <C-@> <C-Space>
+""autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+""autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+""autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+""autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+""autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+""autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " ctags
 Plugin 'szw/vim-tags'
@@ -138,7 +141,7 @@ Plugin 'shumphrey/fugitive-gitlab.vim'
 let g:fugitive_gitlab_domains = ['http://code.libra.srl']
 
 " supertab
-Plugin 'ervandew/supertab'
+""Plugin 'ervandew/supertab'
 
 " Vdebug
 Bundle 'joonty/vdebug.git'
