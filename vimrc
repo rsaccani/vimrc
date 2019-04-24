@@ -262,7 +262,7 @@ noremap <silent> <C-l> :.,$s/\[\.\]/./eg<CR>:.,$s/\ .*//e<CR>:.,$s/\(h[tx]\{2\}p
 " ctrl-k remove duplicates without sorting, keeps first one
 "noremap <silent> <C-k> :GitGutterDisable<CR>:g/^/m0<CR>:g/^\(.*\)\n\1$/d<CR>:g/^/m0<CR>:noh<CR>:GitGutterEnable<CR>
 noremap <silent> <C-k> :let save_view = winsaveview()<CR>:GitGutterDisable<CR>:%!awk '\!a[$0]++'<CR>:GitGutterEnable<CR>:call winrestview(save_view)<CR>
-noremap <silent> <C-i> :let save_view = winsaveview()<CR>:echo "Please wait, removing subdomains..."<CR>:GitGutterDisable<CR>:%!f=$(mktemp); cat - > $f;grep -vxf <(comm -23 <(sort $f \| uniq) <(sort $f \| uniq \| rev \| sort \| awk 'NR\!=1&&substr($0,0,length(p))==p{next}{p=$0".";print}' \| rev\|sort)) $f; rm -f $f<CR>:GitGutterEnable<CR>:echo ""<CR>:call winrestview(save_view)<CR>
+noremap <silent> <C-i> :let save_view = winsaveview()<CR>:echo "Please wait, removing subdomains..."<CR>:GitGutterDisable<CR>:%!bash -c 'f=$(mktemp); cat - > $f;grep -vxf <(comm -23 <(sort $f \| uniq) <(sort $f \| uniq \| rev \| sort \| awk \'NR\!=1&&substr($0,0,length(p))==p{next}{p=$0".";print}\' \| rev\|sort)) $f; rm -f $f'<CR>:GitGutterEnable<CR>:echo ""<CR>:call winrestview(save_view)<CR>
 " ctrl-g updates ctags and cscope
 noremap <silent> <C-g> :echo "Updating ctags and cscope..."<CR>:!rm tags cscope.out; ctags -R; find . -name '*.php' \| xargs  -I '{}' echo \"{}\" > ./cscope.files; find . -name '*.js' \| xargs  -I '{}' echo \"{}\" >> ./cscope.files; cscope -b; rm ./cscope.files<CR>:echo ""<CR>:cs reset<CR>
 " ctrl-a add to permanent blacklist
