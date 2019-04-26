@@ -9,6 +9,11 @@ call vundle#begin()
 
 Bundle 'gmarik/vundle'
 
+" Spamassassin syntax highlight
+Plugin 'vim-scripts/SpamAssassin-syntax'
+autocmd BufNewFile,BufRead *.cf setlocal filetype=spamassassin
+
+
 " Yara syntax highlight
 Plugin 's3rvac/vim-syntax-yara'
 autocmd BufNewFile,BufRead *.yar,*.yara setlocal filetype=yara
