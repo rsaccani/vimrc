@@ -19,6 +19,10 @@ Plugin 'StanAngeloff/php.vim'
 Plugin 'leafgarland/typescript-vim'
 au BufRead,BufNewFile *.tsx setfiletype typescript
 
+" nerdtree syntax highlight
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+
 " vscode
 Plugin 'neoclide/coc.nvim'
 " Use tab for trigger completion with characters ahead and navigate.
@@ -73,8 +77,7 @@ vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
 
-
-
+Plugin 'ryanoasis/vim-devicons'
 
 " autocomplete for php
 ""Plugin 'shawncplus/phpcomplete.vim'
@@ -215,6 +218,9 @@ Plugin 'vim-airline/vim-airline-themes'
 let g:airline_theme='bubblegum'
 let g:airline_powerline_fonts = 1
 let g:airline_section_z = "0x%B %3p%% %#__accent_bold#%{g:airline_symbols.linenr}%#__accent_bold#%4l%#__restore__#%#__restore__#%#__accent_bold#%#__accent_bold#/%L%{g:airline_symbols.maxlinenr}%#__restore__#%#__restore__# :%3v "
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'jsformatter'
+let g:airline_skip_empty_sections = 1
 
 " PHP documentator
 Bundle 'tobyS/pdv'
@@ -278,6 +284,7 @@ set nowrap  "linewraps
 set scrolloff=5 "always show 5 lines before/after the cursor
 set title "update term title
 set visualbell "turn off audio beeps
+set lazyredraw
 
 
 set laststatus=2 " Always show a status line at the bottom
@@ -300,7 +307,7 @@ if bufwinnr(1)
     map <S-Up> <C-W>-
 endif  
 " fix for ctrl-left and ctrl-right in screen
-set term=xterm
+"set term=xterm
 " Alt-arrows change window
 map <Leader><Up> <C-W><Up>
 map <Leader><Down> <C-W><Down>
@@ -308,7 +315,7 @@ map <Leader><Left> <C-W><Left>
 map <Leader><Right> <C-W><Right>
 " allow thte mouse to select the window
 set mouse+=a
-set ttymouse=xterm2
+"set ttymouse=xterm2
 " to make airline themes work fine
 set t_Co=256
 " ctrl-l clean urls
