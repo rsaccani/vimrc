@@ -9,6 +9,10 @@ call vundle#begin()
 
 Bundle 'gmarik/vundle'
 
+" Yara syntax highlight
+Plugin 's3rvac/vim-syntax-yara'
+autocmd BufNewFile,BufRead *.yar,*.yara setlocal filetype=yara
+
 " show added-changed-removed lines
 Bundle 'airblade/vim-gitgutter'
 
