@@ -1,39 +1,45 @@
+" Automatically install vim-plug (if needed)
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Setup vim-plug
+call plug#begin('~/.vim/plugged')
+
 
 filetype off
 filetype plugin indent on " Turns on filetype detection, filetype plugins, and filetype indenting
 syntax enable             " Turns on filetype detection and applies filetype-specific highlighting.
 
 set nocompatible " to get all the Vim-only options
-set rtp+=~/.vim/bundle/vundle
-call vundle#begin()
-
-Bundle 'gmarik/vundle'
 
 " Spamassassin syntax highlight
-Plugin 'vim-scripts/SpamAssassin-syntax'
+Plug 'vim-scripts/SpamAssassin-syntax'
 autocmd BufNewFile,BufRead *.cf setlocal filetype=spamassassin
 
 
 " Yara syntax highlight
-Plugin 's3rvac/vim-syntax-yara'
+Plug 's3rvac/vim-syntax-yara'
 autocmd BufNewFile,BufRead *.yar,*.yara setlocal filetype=yara
 
 " show added-changed-removed lines
-Bundle 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 
 " better syntax highlighting for php
-Plugin 'StanAngeloff/php.vim'
+Plug 'StanAngeloff/php.vim'
 
 " syntax highlihting for tsx
-Plugin 'leafgarland/typescript-vim'
+Plug 'leafgarland/typescript-vim'
 au BufRead,BufNewFile *.tsx setfiletype typescript
 
 " nerdtree syntax highlight
-Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " vscode
-Plugin 'neoclide/coc.nvim'
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 inoremap <silent><expr> <TAB>
@@ -86,10 +92,10 @@ vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
 
-Plugin 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 
 " autocomplete for php
-""Plugin 'shawncplus/phpcomplete.vim'
+""Plug 'shawncplus/phpcomplete.vim'
 ""let g:phpcomplete_complete_for_unknown_classes = 0
 ""let g:phpcomplete_search_tags_for_variables = 0
 ""let g:phpcomplete_parse_docblock_comments = 1
@@ -107,10 +113,10 @@ Plugin 'ryanoasis/vim-devicons'
 ""autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " ctags
-Plugin 'szw/vim-tags'
+Plug 'szw/vim-tags'
 
 " code validation
-Plugin 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -118,7 +124,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_quiet_messages = { "type":    "style" }
 
 " folding
-Plugin 'swekaj/php-foldexpr.vim'
+Plug 'swekaj/php-foldexpr.vim'
 let b:phpfold_use = 1 " - Fold groups of use statements in the global scope.
 let b:phpfold_group_iftry = 0 " - Fold if/elseif/else and try/catch/finally blocks as a group, rather than each part separate.
 let b:phpfold_group_args = 1 " - Group function arguments split across multiple lines into their own fold.
@@ -143,11 +149,11 @@ set foldlevelstart=20
 set foldenable
 
 " getters and setters
-Plugin 'docteurklein/php-getter-setter.vim'
+Plug 'docteurklein/php-getter-setter.vim'
 map <buffer> <C-p> <Plug>PhpgetsetInsertBothGetterSetter
 
 " File browsing
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 " ctrl-n
 map <C-n> :NERDTreeToggle<CR>
 " open if no file
@@ -160,16 +166,16 @@ let NERDTreeQuitOnOpen=1
 
 " Buffer explorer
 let g:buffergator_suppress_keymaps=1 
-Bundle 'jeetsukumaran/vim-buffergator'
+Plug 'jeetsukumaran/vim-buffergator'
 map <C-b> :BuffergatorToggle<CR>
 let g:buffergator_vsplit_size=80
 
 " Tag Bar
-Plugin 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 map <C-t> :TagbarToggle<CR>
 
 " PHP refactoring
-Plugin 'adoy/vim-php-refactoring-toolbox'
+Plug 'adoy/vim-php-refactoring-toolbox'
 let g:vim_php_refactoring_phpdoc = "pdv#DocumentCurrentLine"
 " Default mappings
 " nnoremap <unique> <Leader>rlv :call PhpRenameLocalVariable()<CR>
@@ -186,44 +192,44 @@ let g:vim_php_refactoring_phpdoc = "pdv#DocumentCurrentLine"
 " nnoremap <unique> <Leader>da :call PhpDocAll()<CR>
 
 " twig highlight
-Plugin 'evidens/vim-twig'
+Plug 'evidens/vim-twig'
 
 " Fuzzy find
-Plugin 'eparreno/vim-l9'
-Plugin 'vim-scripts/FuzzyFinder'
+Plug 'eparreno/vim-l9'
+Plug 'vim-scripts/FuzzyFinder'
 map <C-f> :FufCoverageFile<CR>
 "unmap <CR>
 
 " vim-sync
-Plugin 'eshion/vim-sync'
+Plug 'eshion/vim-sync'
 "autocmd BufWritePost * :call SyncUploadFile()
 nnoremap <C-u> <ESC>:call SyncUploadFile()<CR>
 
 " fugitive
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
 " fugitive-gitlab
-Plugin 'shumphrey/fugitive-gitlab.vim'
+Plug 'shumphrey/fugitive-gitlab.vim'
 let g:fugitive_gitlab_domains = ['http://code.libra.srl']
 
 " supertab
-""Plugin 'ervandew/supertab'
+""Plug 'ervandew/supertab'
 
 " Vdebug
-Bundle 'joonty/vdebug.git'
+Plug 'vim-vdebug/vdebug'
 if !exists("g:vdebug_options")
         let g:vdebug_options = {}
 endif
 let g:vdebug_options['path_maps'] = {"/var/www/html": "/home/rsa/git/Esva"}
 
 " auto pairs
-Bundle 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 
 " better statusline
 " You should also install the font:
 " https://powerline.readthedocs.org/en/master/installation/linux.html#fontconfig
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 let g:airline_theme='bubblegum'
 let g:airline_powerline_fonts = 1
 let g:airline_section_z = "0x%B %3p%% %#__accent_bold#%{g:airline_symbols.linenr}%#__accent_bold#%4l%#__restore__#%#__restore__#%#__accent_bold#%#__accent_bold#/%L%{g:airline_symbols.maxlinenr}%#__restore__#%#__restore__# :%3v "
@@ -232,16 +238,16 @@ let g:airline#extensions#tabline#formatter = 'jsformatter'
 let g:airline_skip_empty_sections = 1
 
 " PHP documentator
-Bundle 'tobyS/pdv'
-Plugin 'tobyS/vmustache'
+Plug 'tobyS/pdv'
+Plug 'tobyS/vmustache'
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates"
 map <C-d>  :call pdv#DocumentCurrentLine()<CR>
 
 " Comments
-Plugin 'tomtom/tcomment_vim'
+Plug 'tomtom/tcomment_vim'
 
 " Save old versions of file on save
-"Plugin 'vim-scripts/savevers.vim'
+"Plug 'vim-scripts/savevers.vim'
 "set backup
 "set patchmode=.clean
 "let savevers_dirs='.ignore/backup,.backup,/home/rsa/.vim/backup'
@@ -249,15 +255,14 @@ Plugin 'tomtom/tcomment_vim'
 "let savevers_max = 99
 
 
-call vundle#end()
 " Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+" :PlugList       - lists configured plugins
+" :PlugInstall    - installs plugins; append `!` to update or just :PlugUpdate
+" :PlugSearch foo - searches for foo; append `!` to refresh local cache
+" :PlugClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
 " see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+" Put your non-Plug stuff after this line
 "
 
 " tab 4 chars
@@ -424,3 +429,6 @@ endif
 " Change search highlight colors
 hi  Search ctermfg=black ctermbg=brown
 
+
+" End
+call plug#end()
