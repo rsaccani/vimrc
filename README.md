@@ -7,14 +7,6 @@ This is my personal vim configuration
 
 Clone this repository, then:
 
-cd bundle
-
-$ git clone https://github.com/VundleVim/Vundle.vim.git vundle
-
-launch vim
-
-type :VundleInstall
-
 Install fonts via "apt-get install fonts-powerline"
 
 or 
