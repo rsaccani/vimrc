@@ -163,6 +163,9 @@ map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:NERDTreeWinSize = 50
 let NERDTreeQuitOnOpen=1
+let g:WebDevIconsNerdTreeBeforeGlyphPadding = ""
+let g:WebDevIconsUnicodeDecorateFolderNodes = v:true
+highlight! link NERDTreeFlags NERDTreeDir
 
 " Buffer explorer
 let g:buffergator_suppress_keymaps=1 
