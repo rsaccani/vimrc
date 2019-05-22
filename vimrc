@@ -277,8 +277,31 @@ set shiftwidth=4
 " php manual
 autocmd FileType php set keywordprg=pman
 
-" color
-colorscheme slate
+" color scheme
+Plug 'chriskempson/base16-vim'
+
+" Plug End
+call plug#end()
+
+" Colors
+set termguicolors
+let base16colorspace=256
+colorscheme base16-classic-dark
+hi Normal guibg=black
+
+" Blues
+" light blues
+hi xmlTagName guifg=#59ACE5
+hi xmlTag guifg=#59ACE5
+
+" dark blues
+hi xmlEndTag guifg=#2974a1
+hi jsxCloseString guifg=#2974a1
+hi htmlTag guifg=#2974a1
+hi htmlEndTag guifg=#2974a1
+hi htmlTagName guifg=#59ACE5
+hi jsxAttrib guifg=#1BD1C1
+
 " autocomplete box colors
 "highlight Pmenu guifg=cyan guibg=darkgray
 "highlight Pmenusel guifg=darkgray guibg=cyan
@@ -430,9 +453,5 @@ if has("cscope")
     "set ttimeoutlen=100
 endif
 
-" Change search highlight colors
-hi  Search ctermfg=black ctermbg=brown
 
 
-" End
-call plug#end()
