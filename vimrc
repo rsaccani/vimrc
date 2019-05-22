@@ -32,7 +32,8 @@ Plug 'StanAngeloff/php.vim'
 
 " syntax highlihting for tsx
 Plug 'leafgarland/typescript-vim'
-au BufRead,BufNewFile *.tsx setfiletype typescript
+Plug 'peitalin/vim-jsx-typescript'
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
 
 " nerdtree syntax highlight
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
