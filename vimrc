@@ -358,6 +358,8 @@ map <Leader><Right> <C-W><Right>
 set mouse+=a
 "set ttymouse=xterm2
 " to make airline themes work fine
+" Clipboard
+set clipboard=unnamed
 set t_Co=256
 " ctrl-l clean urls
 noremap <silent> <C-l> :1,$s/\(\#.*\)\@<! \+\(\#\)\@!/\r/eg<CR>:1,$s/\[\?\.\]/./eg<CR>:1,$s/^[:\/]*\(h[xt][xt]p\)\?s\?:\?\/\+//eg<CR>:1,$s/\/.*//eg<CR>:g/^\s*$/d<CR>:noh<CR>
