@@ -363,7 +363,7 @@ set mouse+=a
 set clipboard=unnamed
 set t_Co=256
 " ctrl-l clean urls
-noremap <silent> <C-l> :1,$s/\(\#.*\)\@<! \+\(\#\)\@!/\r/eg<CR>:1,$s/\[\?\.\]/./eg<CR>:1,$s/^[:\/]*\(h[xt][xt]p\)\?s\?:\?\/\+//eg<CR>:1,$s/\/.*//eg<CR>:g/^\s*$/d<CR>:noh<CR>
+noremap <silent> <C-l> :1,$s/\(\#.*\)\@<! \+\(\#\)\@!/\r/eg<CR>:1,$s/\[\?\.\]/./eg<CR>:1,$s/^[:\/]*\(h[xt][xt]p\)\?s\?:\?\/\+\(www\.\)\?//eg<CR>:1,$s/\/.*//eg<CR>:g/^\s*$/d<CR>:noh<CR>
 " ctrl-k remove duplicates without sorting, keeps first one
 "noremap <silent> <C-k> :GitGutterDisable<CR>:g/^/m0<CR>:g/^\(.*\)\n\1$/d<CR>:g/^/m0<CR>:noh<CR>:GitGutterEnable<CR>
 noremap <silent> <C-k> :let save_view = winsaveview()<CR>:GitGutterDisable<CR>:%!awk '\!a[$0]++'<CR>:GitGutterEnable<CR>:call winrestview(save_view)<CR>
