@@ -40,7 +40,8 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " vscode
-Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
@@ -367,7 +368,7 @@ noremap <silent> <C-l> :1,$s/\(\#.*\)\@<! \+\(\#\)\@!/\r/eg<CR>:1,$s/\[\?\.\]/./
 " ctrl-k remove duplicates without sorting, keeps first one
 "noremap <silent> <C-k> :GitGutterDisable<CR>:g/^/m0<CR>:g/^\(.*\)\n\1$/d<CR>:g/^/m0<CR>:noh<CR>:GitGutterEnable<CR>
 noremap <silent> <C-k> :let save_view = winsaveview()<CR>:GitGutterDisable<CR>:%!awk '\!a[$0]++'<CR>:GitGutterEnable<CR>:call winrestview(save_view)<CR>
-noremap <silent> <C-i> :let save_view = winsaveview()<CR>:echo "Please wait, removing subdomains..."<CR>:GitGutterDisable<CR>:%!bash -c 'f=$(mktemp); cat - > $f;grep -vxf <(comm -23 <(sort $f \| uniq) <(sort $f \| uniq \| rev \| sort \| awk \'NR\!=1&&substr($0,0,length(p))==p{next}{p=$0".";print}\' \| rev\|sort)) $f; rm -f $f'<CR>:GitGutterEnable<CR>:echo ""<CR>:call winrestview(save_view)<CR>
+noremap <silent> <C-i> :let save_view = winsaveview()<CR>:echo "Please wait, removing subdomains..."<CR>:GitGutterDisable<CR>:%!bash -c 'f=$(mktemp); cat - > $f;grep -vxf <(comm -23 <(sort $f \| uniq) <(sort $f \| uniq \| rev \| sort \| awk "NR\!=1&&substr(\$0,1,length(p))==p{next}{p=\$0\".\";print}" \| rev\|sort)) $f; rm -f $f'<CR>:GitGutterEnable<CR>:echo ""<CR>:call winrestview(save_view)<CR>
 " ctrl-g updates ctags and cscope
 noremap <silent> <C-g> :echo "Updating ctags and cscope..."<CR>:!rm tags cscope.out; ctags -R; find . -name '*.php' \| xargs  -I '{}' echo \"{}\" > ./cscope.files; find . -name '*.js' \| xargs  -I '{}' echo \"{}\" >> ./cscope.files; cscope -b; rm ./cscope.files<CR>:echo ""<CR>:cs reset<CR>
 " ctrl-a add to permanent blacklist
