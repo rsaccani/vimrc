@@ -19,7 +19,6 @@ set nocompatible " to get all the Vim-only options
 Plug 'vim-scripts/SpamAssassin-syntax'
 autocmd BufNewFile,BufRead *.cf setlocal filetype=spamassassin
 
-
 " Yara syntax highlight
 Plug 's3rvac/vim-syntax-yara'
 autocmd BufNewFile,BufRead *.yar,*.yara setlocal filetype=yara
@@ -93,7 +92,6 @@ nmap <leader>rn <Plug>(coc-rename)
 " Remap for format selected region
 vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
-
 
 Plug 'ryanoasis/vim-devicons'
 
@@ -222,11 +220,11 @@ let g:fugitive_gitlab_domains = ['http://code.libra.srl']
 ""Plug 'ervandew/supertab'
 
 " Vdebug
-Plug 'vim-vdebug/vdebug'
-if !exists("g:vdebug_options")
-        let g:vdebug_options = {}
-endif
-let g:vdebug_options['path_maps'] = {"/var/www/html": "/home/rsa/git/Esva"}
+"Plug 'vim-vdebug/vdebug'
+"if !exists("g:vdebug_options")
+"        let g:vdebug_options = {}
+"endif
+"let g:vdebug_options['path_maps'] = {"/var/www/html": "/home/rsa/git/Esva"}
 
 " auto pairs
 Plug 'jiangmiao/auto-pairs'
@@ -456,6 +454,4 @@ if has("cscope")
     "
     "set ttimeoutlen=100
 endif
-
-
 
