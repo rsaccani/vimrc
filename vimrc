@@ -220,11 +220,11 @@ let g:fugitive_gitlab_domains = ['http://code.libra.srl']
 ""Plug 'ervandew/supertab'
 
 " Vdebug
-Plug 'vim-vdebug/vdebug'
-if !exists("g:vdebug_options")
-        let g:vdebug_options = {}
-endif
-let g:vdebug_options['path_maps'] = {"/var/www/html": "/home/rsa/git/Esva"}
+"Plug 'vim-vdebug/vdebug'
+"f !exists("g:vdebug_options")
+"       let g:vdebug_options = {}
+"ndif
+"et g:vdebug_options['path_maps'] = {"/var/www/html": "/home/rsa/git/Esva"}
 
 " auto pairs
 Plug 'jiangmiao/auto-pairs'
