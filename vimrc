@@ -40,8 +40,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " vscode
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 inoremap <silent><expr> <TAB>
@@ -94,24 +92,6 @@ vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
 Plug 'ryanoasis/vim-devicons'
-
-" autocomplete for php
-""Plug 'shawncplus/phpcomplete.vim'
-""let g:phpcomplete_complete_for_unknown_classes = 0
-""let g:phpcomplete_search_tags_for_variables = 0
-""let g:phpcomplete_parse_docblock_comments = 1
-"inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
-"            \ "\<lt>C-n>" :
-"            \ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
-"            \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
-"            \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
-""imap <C-@> <C-Space>
-""autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
-""autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-""autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-""autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-""autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-""autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " ctags
 Plug 'szw/vim-tags'
@@ -216,9 +196,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'shumphrey/fugitive-gitlab.vim'
 let g:fugitive_gitlab_domains = ['http://code.libra.srl']
 
-" supertab
-""Plug 'ervandew/supertab'
-
 " Vdebug
 "Plug 'vim-vdebug/vdebug'
 "f !exists("g:vdebug_options")
@@ -249,15 +226,6 @@ map <C-d>  :call pdv#DocumentCurrentLine()<CR>
 
 " Comments
 Plug 'tomtom/tcomment_vim'
-
-" Save old versions of file on save
-"Plug 'vim-scripts/savevers.vim'
-"set backup
-"set patchmode=.clean
-"let savevers_dirs='.ignore/backup,.backup,/home/rsa/.vim/backup'
-"let savevers_types = "*.c,*.h,*.vim,*.php,*.css,*.js.*.cf,*.pm,*.sh,*.conf"
-"let savevers_max = 99
-
 
 " Brief help
 " :PlugList       - lists configured plugins
@@ -301,12 +269,6 @@ hi htmlTag guifg=#2974a1
 hi htmlEndTag guifg=#2974a1
 hi htmlTagName guifg=#59ACE5
 hi jsxAttrib guifg=#1BD1C1
-
-" autocomplete box colors
-"highlight Pmenu guifg=cyan guibg=darkgray
-"highlight Pmenusel guifg=darkgray guibg=cyan
-"highlight Pmenu ctermfg=cyan ctermbg=darkgray
-"highlight Pmenusel ctermfg=darkgray ctermbg=cyan
 
 " presentation
 set nu
