@@ -8,7 +8,6 @@ endif
 " Setup vim-plug
 call plug#begin('~/.vim/plugged')
 
-
 filetype off
 filetype plugin indent on " Turns on filetype detection, filetype plugins, and filetype indenting
 syntax enable             " Turns on filetype detection and applies filetype-specific highlighting.
@@ -182,7 +181,6 @@ Plug 'evidens/vim-twig'
 Plug 'eparreno/vim-l9'
 Plug 'vim-scripts/FuzzyFinder'
 map <C-f> :FufCoverageFile<CR>
-"unmap <CR>
 
 " vim-sync
 Plug 'eshion/vim-sync'
@@ -195,13 +193,6 @@ Plug 'tpope/vim-fugitive'
 " fugitive-gitlab
 Plug 'shumphrey/fugitive-gitlab.vim'
 let g:fugitive_gitlab_domains = ['http://code.libra.srl']
-
-" Vdebug
-"Plug 'vim-vdebug/vdebug'
-"f !exists("g:vdebug_options")
-"       let g:vdebug_options = {}
-"ndif
-"et g:vdebug_options['path_maps'] = {"/var/www/html": "/home/rsa/git/Esva"}
 
 " auto pairs
 Plug 'jiangmiao/auto-pairs'
@@ -416,4 +407,3 @@ if has("cscope")
     "
     "set ttimeoutlen=100
 endif
-
