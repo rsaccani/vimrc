@@ -1,3 +1,5 @@
+> **Deprecated.** This configuration is no longer maintained and has been replaced by [rsaccani/nvim](https://github.com/rsaccani/nvim).
+
 ## Synopsis
 
 This is my personal vim configuration
